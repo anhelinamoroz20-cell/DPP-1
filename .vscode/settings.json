@@ -1,6 +1,6 @@
 {
   // Python Settings
-  "python.defaultInterpreterPath": "./.venv/Scripts/python",
+  //"python.defaultInterpreterPath": "./.venv/Scripts/python",
   "python.terminal.activateEnvironment": true,
 
   // Type Checking and Analysis

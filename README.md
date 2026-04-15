@@ -40,22 +40,79 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 
 ---
 
-# [DEIN PROJEKTTITEL HIER] 🚀
+# Amazon Insight Engine: Globale Customer Experience Analyse 🚀
 
-> Eine kurze, prägnante Beschreibung deines Data Science Projekts in 1-2 Sätzen.
+> **Data Science Case Study:** Analyse von 1,2M+ Kundenrezensionen zur Identifikation geschäftskritischer Treiber für Zufriedenheit und Umsatzoptimierung.
+
+---
+
+## 📌 Inhaltsverzeichnis
+* [Projektübersicht](#-projektübersicht)
+* [Zentrale Business-Fragen](#-zentrale-business-fragen)
+* [Datensatz-Beschreibung](#-datensatz-beschreibung)
+* [Projekt-Workflow](#-projekt-workflow)
+* [Technologie-Stack](#-technologien)
+
+---
 
 ## 📊 Projektübersicht
 
-**Problemstellung:** 
-<!-- Beschreibe das Problem, das du lösen möchtest -->
+**Problemstellung:** Unternehmen verlieren signifikante Umsatzanteile durch unerkannte Muster in negativen Bewertungen. Die Herausforderung liegt in der Skalierbarkeit der Analyse über mehrsprachige Märkte hinweg.
 
-**Ziel:** 
-<!-- Was ist das Hauptziel deines Projekts? -->
+**Ziel:** Entwicklung eines Frameworks zur Identifikation von **Risikozonen** und zur prädiktiven Vorhersage negativer Kundenerfahrungen mittels NLP und Machine Learning.
 
-**Methoden:** 
-<!-- Welche Techniken/Algorithmen verwendest du? -->
+### 🛠 Technologien
+* **Core:** `Pandas`, `NumPy`
+* **Viz:** `Seaborn`, `Plotly`, `Matplotlib`
+* **NLP:** `NLTK` / `Spacy` (Tokenisierung, N-Grams, Stopword-Removal)
+* **ML:** `Scikit-learn` (Logistic Regression, Metric Evaluation)
+
+---
+
+## 💡 Zentrale Business-Fragen
+
+1. **Risikozonen:** Welche Kategorien haben die höchste Negativ-Konzentration?
+2. **Psychologie:** Korreliert die `review_length` mit extremen Sternebewertungen?
+3. **Lokalisierung:** Wie unterscheidet sich der NPS (Net Promoter Score) zwischen Regionen (DE, US, JP)?
+4. **Semantik:** Welche Begriffe sind die stärksten Prädiktoren für Churn/Unzufriedenheit?
+5. **Prediction:** Wie präzise lassen sich negative Erfahrungen vorab klassifizieren?
+
+---
+
+## ⚙️ Projekt-Workflow
+
+### Phase 1: Daten-Audit & Performance-Optimierung
+* **Konsolidierung:** Merge von Train/Test/Validation zu einem Master-Dataset (1.2M+ Zeilen).
+* **Memory Management:** Downcasting von Datentypen (`int8`, `category`) zur Reduktion des RAM-Verbrauchs um bis zu 70%.
+* **Cleaning:** Behandlung von NaNs und technischen Artefakten.
+
+### Phase 2: Explorative Datenanalyse (EDA)
+* **Benchmark:** Visualisierung von Performance-Gaps zwischen Kategorien.
+* **Global Sentiment:** Cross-Market Analyse der Kundenzufriedenheit.
+* **Statistik:** Korrelationsmatrix zwischen Metadaten und Ratings.
+
+### Phase 3: Feature Engineering
+* Generierung von Text-Metriken (Wortanzahl, Satzstruktur).
+* **Target Labeling:** Transformation der Ratings in binäre Klassen (Positiv/Negativ).
+
+### Phase 4: NLP & Semantic Mining
+* Extraktion von Schmerzpunkten mittels **N-Gram-Analyse**.
+* Visuelle Identifikation von Treibern via WordClouds.
+
+### Phase 5: Predictive Modeling & Action Plan
+* Training einer Logistischen Regression.
+* Ableitung von Strategien zur Steigerung der Conversion-Rate.
+
+---
+
+## 📂 Datensatz (Data Dictionary)
+* **Quelle:** The Multilingual Amazon Reviews Corpus
+* **Umfang:** 1.264.107 Rezensionen
+* **Märkte:** DE, EN, FR, ES, IT, JP
+* **Features:** `stars`, `review_body`, `review_title`, `product_category`, `language`
 
 
+## Ergebnisse & Business Insights 📈
 
 ## Setup
 
