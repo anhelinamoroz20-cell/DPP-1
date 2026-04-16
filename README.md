@@ -47,11 +47,13 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 ---
 
 ## 📌 Inhaltsverzeichnis
-* [Projektübersicht](#-projektübersicht)
-* [Zentrale Business-Fragen](#-zentrale-business-fragen)
-* [Datensatz-Beschreibung](#-datensatz-beschreibung)
-* [Projekt-Workflow](#-projekt-workflow)
-* [Technologie-Stack](#-technologien)
+* [Projektübersicht](#projektübersicht)
+* [Zentrale Business-Fragen](#zentrale-business-fragen)
+* [Technologie-Stack](#technologie-stack)
+* [Datensatz-Beschreibung](#datensatz-beschreibung)
+* [Projekt-Workflow](#projekt-workflow)
+* [Analyse-Ergebnisse & Erkenntnisse](#analyse-ergebnisse--erkenntnisse)
+
 
 ---
 
@@ -61,11 +63,6 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 
 **Ziel:** Entwicklung eines Frameworks zur Identifikation von **Risikozonen** und zur prädiktiven Vorhersage negativer Kundenerfahrungen mittels NLP und Machine Learning.
 
-### 🛠 Technologien
-* **Core:** `Pandas`, `NumPy`
-* **Viz:** `Seaborn`, `Plotly`, `Matplotlib`
-* **NLP:** `NLTK` / `Spacy` (Tokenisierung, N-Grams, Stopword-Removal)
-* **ML:** `Scikit-learn` (Logistic Regression, Metric Evaluation)
 
 ---
 
@@ -76,6 +73,25 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 3. **Lokalisierung:** Wie unterscheidet sich der NPS (Net Promoter Score) zwischen Regionen (DE, US, JP)?
 4. **Semantik:** Welche Begriffe sind die stärksten Prädiktoren für Churn/Unzufriedenheit?
 5. **Prediction:** Wie präzise lassen sich negative Erfahrungen vorab klassifizieren?
+
+
+---
+
+## 🛠 Technologie-Stack
+* **Core:** `Pandas`, `NumPy`
+* **Viz:** `Seaborn`, `Plotly`, `Matplotlib`
+* **NLP:** `NLTK` / `Spacy` (Tokenisierung, N-Grams, Stopword-Removal)
+* **ML:** `Scikit-learn` (Logistic Regression, Metric Evaluation)
+
+
+---
+
+## 📂 Datensatz-Beschreibung
+* **Quelle:** The Multilingual Amazon Reviews Corpus
+* **Umfang:** 1.264.107 Rezensionen
+* **Märkte:** DE, EN, FR, ES, IT, JP
+* **Features:** `stars`, `review_body`, `review_title`, `product_category`, `language`
+
 
 ---
 
@@ -103,16 +119,31 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 * Training einer Logistischen Regression.
 * Ableitung von Strategien zur Steigerung der Conversion-Rate.
 
+
 ---
 
-## 📂 Datensatz (Data Dictionary)
-* **Quelle:** The Multilingual Amazon Reviews Corpus
-* **Umfang:** 1.264.107 Rezensionen
-* **Märkte:** DE, EN, FR, ES, IT, JP
-* **Features:** `stars`, `review_body`, `review_title`, `product_category`, `language`
+## 📈 Analyse-Ergebnisse & Erkenntniss
 
+ *Phase 1: Datenqualität & Performance*
 
-## Ergebnisse & Business Insights 📈
+* **Datenqualität:** Erfolgreiche Validierung von **1,26 Mio. Datensätzen**. Vollständige Bereinigung von 46 fehlenden Werten und technischen Artefakten (`Unnamed: 0`).
+* **Effizienz:** Implementierung von **Memory-Management-Strategien** (`int8`, `category`). Dies garantiert eine performante Verarbeitung der Big Data Bestände und reduziert den RAM-Verbrauch um **~70%**.
+* **Integrität:** Sicherstellung einer konsistenten Datenbasis (0 Duplikate) als Fundament für alle weiteren statistischen Auswertungen.
+
+*Phase 2: Explorative Insights (EDA)*
+
+*   **Performance Gap (2.1):** Identifikation eines signifikanten Unterschieds von **12%** in der Kundenzufriedenheit zwischen den Kategorien. `Wireless` und `PC` wurden als kritische **Risikozonen** (~24% Negativ-Rate) eingestuft.
+*   **Global Sentiment (2.2):** Analyse der Marktverteilung (DE, EN, JP etc.). Feststellung einer künstlichen Daten-Balance (exakt **20%** pro Sterne-Rating), was eine ideale, verzerrungsfreie Basis für das spätere Machine Learning Training bietet.
+*   **Kunden-Psychologie (2.3):** Nachweis eines veränderten Schreibverhaltens bei Unzufriedenheit. Während 5-Sterne-Bewertungen mit durchschnittlich **18,26 Wörtern** am kürzesten sind, investieren enttäuschte Kunden (2-3 Sterne) mit ca. **23,7 Wörtern** deutlich mehr Aufwand in ihre Rezensionen.
+> **Business Insight:** Unzufriedenheit ist "lauter" und detaillierter. Kurze Rezensionen sind ein Indikator für Kundenzufriedenheit, während längere Texte oft spezifische Prozess- oder Produktfehler beschreiben, die proaktiv angegangen werden müssen.
+
+*Phase 3: Feature Engineering & Target Labeling*
+
+*   **Text-Metriken:** Generierung neuer numerischer Features wie `review_length` und `title_length`. Diese dienen als Prädiktoren für das Modell und bestätigen statistisch, dass unzufriedene Kunden detaillierteres Feedback geben.
+*   **Target Labeling:** Transformation der 5-Sterne-Skala in ein binäres Format (`is_positive`). 
+*   **Daten-Struktur:** Erstellung einer stabilen Zielvariable mit einer Verteilung von **60% (Negativ)** zu **40% (Positiv)**, was eine optimale Basis für die Klassifizierung in Phase 5 bietet.
+> **Resultat:** Die Daten sind nun strukturell für das Machine Learning vorbereitet. Die Kombination aus Textmetriken und binärem Label ermöglicht eine präzise Modellierung der Kundenzufriedenheit.
+
 
 ## Setup
 
