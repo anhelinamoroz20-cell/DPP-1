@@ -70,7 +70,7 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 
 1. **Risikozonen:** Welche Kategorien haben die höchste Negativ-Konzentration?
 2. **Psychologie:** Korreliert die `review_length` mit extremen Sternebewertungen?
-3. **Lokalisierung:** Wie unterscheidet sich der NPS (Net Promoter Score) zwischen Regionen (DE, US, JP)?
+3. **Lokalisierung:** Wie unterscheidet sich der NPS (Net Promoter Score) zwischen Regionen?
 4. **Semantik:** Welche Begriffe sind die stärksten Prädiktoren für Churn/Unzufriedenheit?
 5. **Prediction:** Wie präzise lassen sich negative Erfahrungen vorab klassifizieren?
 
@@ -89,7 +89,7 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 ## 📂 Datensatz-Beschreibung
 * **Quelle:** The Multilingual Amazon Reviews Corpus
 * **Umfang:** 1.264.107 Rezensionen
-* **Märkte:** DE, EN, FR, ES, IT, JP
+* **Märkte:** DE, EN, FR, ES, ZH, JP
 * **Features:** `stars`, `review_body`, `review_title`, `product_category`, `language`
 
 
@@ -112,8 +112,9 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 * **Target Labeling:** Transformation der Ratings in binäre Klassen (Positiv/Negativ).
 
 ### Phase 4: NLP & Semantic Mining
-* Extraktion von Schmerzpunkten mittels **N-Gram-Analyse**.
-* Visuelle Identifikation von Treibern via WordClouds.
+* Extraktion von Schmerzpunkten mittels **N-Gram-Analyse**(DE).
+* Visuelle Identifikation von Treibern via WordClouds (DE).
+* Global Expansion: Vergleichende semantische Analyse der restlichen 5 Märkte (EN, JA, FR, ES, ZH) zur Identifikation universeller Muster.
 
 ### Phase 5: Predictive Modeling & Action Plan
 * Training einer Logistischen Regression.
@@ -132,9 +133,12 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 
 *Phase 2: Explorative Insights (EDA)*
 
-*   **Performance Gap (2.1):** Identifikation eines signifikanten Unterschieds von **12%** in der Kundenzufriedenheit zwischen den Kategorien. `Wireless` und `PC` wurden als kritische **Risikozonen** (~24% Negativ-Rate) eingestuft.
-*   **Global Sentiment (2.2):** Analyse der Marktverteilung (DE, EN, JP etc.). Feststellung einer künstlichen Daten-Balance (exakt **20%** pro Sterne-Rating), was eine ideale, verzerrungsfreie Basis für das spätere Machine Learning Training bietet.
-*   **Kunden-Psychologie (2.3):** Nachweis eines veränderten Schreibverhaltens bei Unzufriedenheit. Während 5-Sterne-Bewertungen mit durchschnittlich **18,26 Wörtern** am kürzesten sind, investieren enttäuschte Kunden (2-3 Sterne) mit ca. **23,7 Wörtern** deutlich mehr Aufwand in ihre Rezensionen.
+*   **Performance Gap:** Identifikation eines signifikanten Unterschieds von **12%** in der Kundenzufriedenheit zwischen den Kategorien. `Wireless` und `PC` wurden als kritische **Risikozonen** (~24% Negativ-Rate) eingestuft.
+
+![Performance Gap Analysis](images_projekt/2.1.png)
+
+*   **Global Sentiment:** Analyse der Marktverteilung (DE, EN, JP etc.). Feststellung einer künstlichen Daten-Balance (exakt **20%** pro Sterne-Rating), was eine ideale, verzerrungsfreie Basis für das spätere Machine Learning Training bietet.
+*   **Kunden-Psychologie:** Nachweis eines veränderten Schreibverhaltens bei Unzufriedenheit. Während 5-Sterne-Bewertungen mit durchschnittlich **18,26 Wörtern** am kürzesten sind, investieren enttäuschte Kunden (2-3 Sterne) mit ca. **23,7 Wörtern** deutlich mehr Aufwand in ihre Rezensionen.
 > **Business Insight:** Unzufriedenheit ist "lauter" und detaillierter. Kurze Rezensionen sind ein Indikator für Kundenzufriedenheit, während längere Texte oft spezifische Prozess- oder Produktfehler beschreiben, die proaktiv angegangen werden müssen.
 
 *Phase 3: Feature Engineering & Target Labeling*
@@ -143,6 +147,33 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 *   **Target Labeling:** Transformation der 5-Sterne-Skala in ein binäres Format (`is_positive`). 
 *   **Daten-Struktur:** Erstellung einer stabilen Zielvariable mit einer Verteilung von **60% (Negativ)** zu **40% (Positiv)**, was eine optimale Basis für die Klassifizierung in Phase 5 bietet.
 > **Resultat:** Die Daten sind nun strukturell für das Machine Learning vorbereitet. Die Kombination aus Textmetriken und binärem Label ermöglicht eine präzise Modellierung der Kundenzufriedenheit.
+
+*Phase 4: NLP & Semantic Mining (Global Insights)*
+
+*   **Semantische Treiber (DE):** Die N-Gram-Analyse identifizierte `"schlechte qualität"` und `"schnell kaputt"` als die mit Abstand stärksten Prädiktoren für Unzufriedenheit. Dies deutet auf kritische Mängel in der Produkthaltbarkeit hin.
+*   **Visuelle Analyse:** Die WordCloud bestätigt die Dominanz von Begriffen wie **"Defekt"**, **"Schrott"** und **"Enttäuscht"**. Auffällig ist auch das Wort **"klein"**, was auf Diskrepanzen zwischen Produktbildern und der Realität hinweist.
+
+![WordCloud Analysis](images_projekt/4.2.png)
+
+*   **Globale Konsistenz:** Die Expansion auf die Märkte EN, JA, FR, ES und ZH zeigt ein universelles Muster: Begriffe wie *"Quality"*, *"Qualité"*, *"Calidad"* und *"质量"* (Zhìliàng) führen weltweit die Negativ-Listen an.
+> **Business Insight:** Kundenzufriedenheit ist kein kulturelles, sondern ein produktbezogenes Thema. Da die "Pain Points" weltweit identisch sind (Materialqualität & Defekte), können Qualitätsverbesserungen zentral gesteuert werden und werden eine positive Wirkung auf allen 6 Weltmärkten gleichzeitig haben.
+
+*Phase 5: Predictive Modeling & Strategic Action Plan*
+
+*   **Modell-Performance:** Implementierung einer Logistischen Regression, die eine **Gesamtgenauigkeit von 77%** erreicht. Besonders hervorzuheben ist der **Negative Recall von 92%** – das Modell identifiziert nahezu jede kritische Kundenbeschwerde zuverlässig.
+*   **Prädiktive Asymmetrie:** Bestätigung der Hypothese aus Phase 2: Unzufriedenheit ist linguistisch "strukturierter". Das Modell lernt negative Muster (Recall 92%) deutlich effektiver als positive (Recall 53%), da enttäuschte Kunden präzisere Schmerzpunkte artikulieren.
+
+![Sentiment Drivers Analysis](images_projekt/5.2.png)
+
+*   **Globale Treiber:** Die Identifikation von universellen Prädiktoren wie `"disappointed"`, `"enttäuscht"`, `"déçue"` und `"mala"` beweist, dass die Modelllogik über Sprachgrenzen hinweg stabil bleibt. Begriffe wie `"impossible"` und `"poor"` wurden als systemische Warnsignale für Funktionsausfälle isoliert.
+
+> **Business Action Plan:** 
+> 1. **Early Warning System:** Integration des Modells zur automatischen Flaggen von "High-Risk"-Rezensionen (92% Erkennungsrate) für sofortige Interventionen des Kunden-Supports.
+> 2. **Zentralisierte Qualitätssteuerung:** Da die Unzufriedenheit weltweit die gleichen Treiber hat (Qualität & Defekte), können Optimierungsmaßnahmen zentral gesteuert werden, statt sie lokal für jeden Markt zu fragmentieren.
+> 3. **Proaktives Reputationsmanagement:** Durch die gezielte Analyse von Begriffen wie „schade“ oder „déconseille“ können Marketing- und Produktteams Diskrepanzen zwischen Kundenerwartung und Realität minimieren, bevor diese den NPS nachhaltig schädigen.
+
+## 🏆 Fazit
+Dieses Projekt demonstriert die erfolgreiche Skalierung von NLP-Analysen auf Millionen von Datensätzen. Durch die Kombination aus **Memory Management**, **multilingualem Semantic Mining** und einem **High-Recall-Modell (92%)** wurde ein Framework geschaffen, das globale Schmerzpunkte identifiziert und automatisierte Lösungen für den Kundensupport ermöglicht.
 
 
 ## Setup
