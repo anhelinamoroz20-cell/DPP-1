@@ -96,7 +96,7 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 
 ---
 
-## ⚙️ Projekt-Workflow
+## Projekt-Workflow
 
 ### Phase 1: Daten-Audit & Performance-Optimierung
 * **Konsolidierung:** Merge von Train/Test/Validation zu einem Master-Dataset (1.2M+ Zeilen).
@@ -124,7 +124,7 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 
 ---
 
-## 📈 Analyse-Ergebnisse & Erkenntniss
+## Analyse-Ergebnisse & Erkenntniss
 
  *Phase 1: Datenqualität & Performance*
 
