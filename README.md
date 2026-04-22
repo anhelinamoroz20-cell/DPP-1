@@ -52,7 +52,7 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 * [Technologie-Stack](#-technologie-stack)
 * [Datensatz-Beschreibung](#-datensatz-beschreibung)
 * [Projekt-Workflow](#projekt-workflow)
-* [Analyse-Ergebnisse & Erkenntnisse](#analyse-ergebnisse--erkenntnisse)
+* [Analyse-Ergebnisse & Erkenntnisse](#analyse-ergebnisse-und-erkenntnisse)
 
 
 
@@ -124,7 +124,7 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 
 ---
 
-## Analyse-Ergebnisse & Erkenntniss
+## Analyse-Ergebnisse und Erkenntnisse
 
  *Phase 1: Datenqualität & Performance*
 
