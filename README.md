@@ -51,8 +51,8 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 * [Zentrale Business-Fragen](#-zentrale-business-fragen)
 * [Technologie-Stack](#-technologie-stack)
 * [Datensatz-Beschreibung](#-datensatz-beschreibung)
-* [Projekt-Workflow](#-projekt-workflow)
-* [Analyse-Ergebnisse & Erkenntnisse](#-analyse-ergebnisse--erkenntnisse)
+* [Projekt-Workflow](#projekt-workflow)
+* [Analyse-Ergebnisse & Erkenntnisse](#analyse-ergebnisse--erkenntnisse)
 
 
 
