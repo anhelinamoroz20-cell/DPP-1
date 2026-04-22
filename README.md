@@ -136,7 +136,7 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 
 *   **Performance Gap:** Identifikation eines signifikanten Unterschieds von **12%** in der Kundenzufriedenheit zwischen den Kategorien. `Wireless` und `PC` wurden als kritische **Risikozonen** (~24% Negativ-Rate) eingestuft.
 
-![Performance Gap Analysis](images_projekt/2.1.PNG)
+![Performance Gap Analysis](images_projekt/2.1.png)
 
 *   **Global Sentiment:** Analyse der Marktverteilung (DE, EN, JP etc.). Feststellung einer künstlichen Daten-Balance (exakt **20%** pro Sterne-Rating), was eine ideale, verzerrungsfreie Basis für das spätere Machine Learning Training bietet.
 *   **Kunden-Psychologie:** Nachweis eines veränderten Schreibverhaltens bei Unzufriedenheit. Während 5-Sterne-Bewertungen mit durchschnittlich **18,26 Wörtern** am kürzesten sind, investieren enttäuschte Kunden (2-3 Sterne) mit ca. **23,7 Wörtern** deutlich mehr Aufwand in ihre Rezensionen.
@@ -154,7 +154,7 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 *   **Semantische Treiber (DE):** Die N-Gram-Analyse identifizierte `"schlechte qualität"` und `"schnell kaputt"` als die mit Abstand stärksten Prädiktoren für Unzufriedenheit. Dies deutet auf kritische Mängel in der Produkthaltbarkeit hin.
 *   **Visuelle Analyse:** Die WordCloud bestätigt die Dominanz von Begriffen wie **"Defekt"**, **"Schrott"** und **"Enttäuscht"**. Auffällig ist auch das Wort **"klein"**, was auf Diskrepanzen zwischen Produktbildern und der Realität hinweist.
 
-![WordCloud Analysis](images_projekt/4.2.PNG)
+![WordCloud Analysis](images_projekt/4.2.png)
 
 *   **Globale Konsistenz:** Die Expansion auf die Märkte EN, JA, FR, ES und ZH zeigt ein universelles Muster: Begriffe wie *"Quality"*, *"Qualité"*, *"Calidad"* und *"质量"* (Zhìliàng) führen weltweit die Negativ-Listen an.
 > **Business Insight:** Kundenzufriedenheit ist kein kulturelles, sondern ein produktbezogenes Thema. Da die "Pain Points" weltweit identisch sind (Materialqualität & Defekte), können Qualitätsverbesserungen zentral gesteuert werden und werden eine positive Wirkung auf allen 6 Weltmärkten gleichzeitig haben.
@@ -164,7 +164,7 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 *   **Modell-Performance:** Implementierung einer Logistischen Regression, die eine **Gesamtgenauigkeit von 77%** erreicht. Besonders hervorzuheben ist der **Negative Recall von 92%** – das Modell identifiziert nahezu jede kritische Kundenbeschwerde zuverlässig.
 *   **Prädiktive Asymmetrie:** Bestätigung der Hypothese aus Phase 2: Unzufriedenheit ist linguistisch "strukturierter". Das Modell lernt negative Muster (Recall 92%) deutlich effektiver als positive (Recall 53%), da enttäuschte Kunden präzisere Schmerzpunkte artikulieren.
 
-![Sentiment Drivers Analysis](images_projekt/5.2.PNG)
+![Sentiment Drivers Analysis](images_projekt/5.2.png)
 
 *   **Globale Treiber:** Die Identifikation von universellen Prädiktoren wie `"disappointed"`, `"enttäuscht"`, `"déçue"` und `"mala"` beweist, dass die Modelllogik über Sprachgrenzen hinweg stabil bleibt. Begriffe wie `"impossible"` und `"poor"` wurden als systemische Warnsignale für Funktionsausfälle isoliert.
 
